@@ -1,0 +1,53 @@
+:root{--bg:#1e2127;--bg2:#282c34;--bg3:#323842;--fg:#d7dae0;--mut:#8b93a1;--acc:#61afef;--bd:#3b4252}
+body[data-theme=light]{--bg:#fff;--bg2:#f1f3f5;--bg3:#e3e6ea;--fg:#1f2328;--mut:#6a737d;--acc:#0969da;--bd:#d0d7de}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px system-ui,sans-serif;overflow:hidden}
+body{display:flex;flex-direction:column;height:100dvh;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+button{background:none;border:0;color:var(--fg);font-size:16px;padding:8px 9px;border-radius:6px}
+button:active{background:var(--bg3)}
+header{display:flex;align-items:center;background:var(--bg2);border-bottom:1px solid var(--bd)}
+.grow{flex:1;text-align:left;font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#tabs{display:flex;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--bd)}
+.tab{display:flex;align-items:center;gap:6px;padding:7px 10px;white-space:nowrap;color:var(--mut);border-right:1px solid var(--bd)}
+.tab.on{color:var(--fg);background:var(--bg);border-bottom:2px solid var(--acc)}
+.tab b{padding:0 4px;font-size:15px}
+#main{flex:1;position:relative;min-height:0}
+#editor{position:absolute;inset:0}
+#editor .cm-editor{height:100%}
+#editor .cm-scroller{overflow:auto}
+#empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);pointer-events:none}
+#side{position:absolute;top:0;bottom:0;left:0;width:82%;max-width:340px;background:var(--bg2);z-index:5;transform:translateX(-102%);transition:transform .2s;display:flex;flex-direction:column;border-right:1px solid var(--bd)}
+#side.on{transform:none}
+#scrim{display:none;position:absolute;inset:0;background:#0006;z-index:4}
+#scrim.on{display:block}
+.sh{display:flex;justify-content:space-between;align-items:center;padding:4px 10px;border-bottom:1px solid var(--bd)}
+#tree{flex:1;overflow:auto}
+.row{display:flex;align-items:center;gap:6px;padding:9px 8px}
+.row:active{background:var(--bg3)}
+.row .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .ic{width:14px;color:var(--mut)}
+.more{padding:2px 10px}
+#keys{display:flex;overflow-x:auto;background:var(--bg2);border-top:1px solid var(--bd)}
+#keys button{min-width:38px;font-family:monospace}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#000c;color:#fff;padding:8px 14px;border-radius:18px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99;max-width:90%}
+#toast.on{opacity:1}
+.modal{position:fixed;inset:0;background:#0007;z-index:50;display:flex;align-items:flex-end}
+.mbox{background:var(--bg);width:100%;max-height:85%;display:flex;flex-direction:column;border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+.mbox.full{height:94%;max-height:94%}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-bottom:1px solid var(--bd);font-weight:600}
+.mb{overflow:auto;padding:10px;flex:1;min-height:0}
+.sheet button,.btns button{display:block;width:100%;text-align:left;padding:13px;border-bottom:1px solid var(--bd);border-radius:0}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.btns button{background:var(--bg3);border:0;text-align:center;border-radius:8px}
+input,textarea,select{width:100%;background:var(--bg2);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:9px;font-size:14px;margin:4px 0 10px}
+label{color:var(--mut);font-size:12px}
+.muted{color:var(--mut)}
+.st{font-family:monospace;font-size:12px;padding:3px 0}
+.hit{padding:8px 4px;border-bottom:1px solid var(--bd);font-size:12px}
+.pv{display:flex;flex-direction:column;height:100%;margin:-10px}
+.pv iframe{flex:1.2;border:0;background:#fff;min-height:0}
+.con{flex:1;display:flex;flex-direction:column;border-top:2px solid var(--acc);min-height:0}
+#clog{flex:1;overflow:auto;font:12px monospace;padding:6px}
+#clog div{padding:2px 0;border-bottom:1px solid var(--bd);white-space:pre-wrap;word-break:break-all}
+#clog .error{color:#e06c75}#clog .warn{color:#e5c07b}
+.cin{display:flex;gap:4px}.cin input{margin:0}

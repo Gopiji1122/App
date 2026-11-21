@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CodeDroid</title>
+</head><body data-theme="dark">
+<header>
+  <button id="bMenuSide">☰</button>
+  <button id="pname" class="grow"></button>
+  <button id="bUndo">↶</button><button id="bRedo">↷</button>
+  <button id="bFind">🔍</button><button id="bSave">💾</button>
+  <button id="bRun">▶</button><button id="bMore">⋮</button>
+</header>
+<div id="tabs"></div>
+<div id="main">
+  <div id="scrim"></div>
+  <aside id="side">
+    <div class="sh"><b>Files</b><span><button id="bNewF">＋📄</button><button id="bNewD">＋📁</button></span></div>
+    <div id="tree"></div>
+  </aside>
+  <div id="editor"></div>
+  <div id="empty">Open a file from ☰ to start editing</div>
+</div>
+<div id="keys"></div>
+<div id="toast"></div>
+<input type="file" id="imp" multiple hidden>
+<script type="module" src="/src/main.js"></script>
+</body></html>
